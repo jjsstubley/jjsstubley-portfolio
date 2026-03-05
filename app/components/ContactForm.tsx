@@ -19,7 +19,13 @@ export function ContactForm() {
     resolver: zodResolver(contactSchema),
   });
 
-  const onSubmit = () => {
+  const onSubmit = (data: ContactFormData) => {
+    const subject = encodeURIComponent(`Contact from ${data.name}`);
+    const body = encodeURIComponent(
+      `${data.message}\n\n---\nFrom: ${data.name} (${data.email})`
+    );
+    const mailtoUrl = `mailto:${site.email}?subject=${subject}&body=${body}`;
+    window.location.href = mailtoUrl;
     setSubmitted(true);
     reset();
   };
@@ -52,7 +58,7 @@ export function ContactForm() {
               Thanks! I&apos;ll get back to you.
             </p>
             <p className="mt-2 text-sm text-[var(--color-foreground-muted)]">
-              (This is a demo — no message was sent.)
+              Your email client should have opened with the message ready to send.
             </p>
           </div>
         ) : (
