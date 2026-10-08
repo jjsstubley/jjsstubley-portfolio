@@ -19,7 +19,7 @@ export const work: WorkEntry[] = [
     role:"Led frontend development of the platform, building the core user experience, implementing SEO optimisation, and working closely with product to ship production features under tight deadlines.",
     impact: "Delivered a scalable frontend platform that improved content discoverability and engagement for a large and growing user base.",
     tech: ["React", "Next.js", "TypeScript", 'SEO optimisation'],
-    liveUrl: "https://cashumarkets.com",
+    liveUrl: "https://cashufinance.com",
     status: ["Production", "Active Development"],
   },
   {
